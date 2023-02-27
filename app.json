@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "PETs-Website",
+    "slug": "PETs-Website",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "PETs-Website"
+}
