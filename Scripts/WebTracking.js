@@ -54,6 +54,8 @@ export default function WebTracking(props) {
         }
     }, [width])
 
+    const [section, setSection] = useState(0)
+
     return (<View style={styles.container}>
         {!loaded && (<View style={styles.loadingContainer}>
             <ActivityIndicatorView />
@@ -61,7 +63,66 @@ export default function WebTracking(props) {
         (<View style={{flex:1}}>
         {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
             <Header mobile={mobile} page={0} />
-            <Text>hi</Text>
+            {section == 0 && (<View style={styles.section}>
+                <View style={styles.sectionContent}>
+                    <Text style={styles.paragraph}>I am content!</Text>
+                </View>
+                <View style={styles.sectionNav}>
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'Go Back'}
+                        icon={<Icon
+                            name='chevron-back'
+                            type='ionicon'
+                            size={16}
+                            color={'#ddd'}
+                        />}
+                        disabled={true}
+                    />
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'Forward'}
+                        icon={<Icon
+                            name='chevron-forward'
+                            type='ionicon'
+                            size={16}
+                            color={colors.mainTextColor}
+                        />}
+                        iconRight={true}
+                        onPress={() => setSection(1)}
+                    />
+                </View>
+            </View>)}
+            {section == 1 && (<View style={styles.section}>
+                <View style={styles.sectionContent}>
+                    <Text style={styles.paragraph}>I am content as well!</Text>
+                </View>
+                <View style={styles.sectionNav}>
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'Go Back'}
+                        icon={<Icon
+                            name='chevron-back'
+                            type='ionicon'
+                            size={16}
+                            color={colors.mainTextColor}
+                        />}
+                        onPress={() => setSection(0)}
+                    />
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'Forward'}
+                        icon={<Icon
+                            name='chevron-forward'
+                            type='ionicon'
+                            size={16}
+                            color={'#ddd'}
+                        />}
+                        iconRight={true}
+                        disabled={true}
+                    />
+                </View>
+            </View>)}
         </Animated.View>) || (<View style={styles.construction}>
             <Icon
                 name='construct'

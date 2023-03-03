@@ -59,7 +59,7 @@ export default function Home(props) {
             <ActivityIndicatorView />
         </View>) ||
         (<View style={{flex:1}}>
-        {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
+        {siteEnabled && (<Animated.View style={[styles.loadingContainer,{opacity:fadeAnim}]}>
             <Animated.Image 
                 source={require('../assets/icons/main.png')}
                 style={[styles.logo]}
@@ -74,7 +74,7 @@ export default function Home(props) {
                     <Button 
                         buttonStyle={styles.navButton}
                         title={'View Lesson'}
-                        onPress={() => linkTo('')}
+                        onPress={() => linkTo('/encryption-basics')}
                     />
                 </View>
                 <View style={[styles.infoBox,{marginLeft:20,marginRight:20}]}>
@@ -83,7 +83,7 @@ export default function Home(props) {
                     <Button 
                         buttonStyle={styles.navButton}
                         title={'View Lesson'}
-                        onPress={() => linkTo('')}
+                        onPress={() => linkTo('/web-tracking')}
                     />
                 </View>
                 <View style={styles.infoBox}>
@@ -92,7 +92,7 @@ export default function Home(props) {
                     <Button 
                         buttonStyle={styles.navButton}
                         title={'View Lesson'}
-                        onPress={() => linkTo('')}
+                        onPress={() => linkTo('/anonymity')}
                     />
                 </View>
             </View>

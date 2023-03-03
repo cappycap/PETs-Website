@@ -44,8 +44,6 @@ export const main = StyleSheet.create({
   },
   mainContainer: {
     flex:1,
-    justifyContent:'center',
-    alignItems:'center'
   },
   row: {
     flexDirection:'row',
@@ -86,6 +84,14 @@ export const main = StyleSheet.create({
     width:160,
     height:140,
   },
+  section: {
+    margin:20
+  },
+  sectionNav: {
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between'
+  }
 })
 
 export const header = StyleSheet.create({
