@@ -10,7 +10,7 @@ import ActivityIndicatorView from './Shared/ActivityIndicatorView.js'
 import useWindowDimensions from './Shared/useWindowDimensions.js'
 import Header from './Shared/Header.js'
 
-export default function Home(props) {
+export default function Anonymity(props) {
 
     // Nav.
     var linkTo = useLinkTo()
