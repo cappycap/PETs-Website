@@ -18,7 +18,7 @@ export default function ActivityIndicatorView({ size }) {
   }, [])
 
   return(<View style={{flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-    <ActivityIndicator color={'#f79535'} size={aSize}  />
+    <ActivityIndicator color={'#27ae60'} size={aSize}  />
   </View>)
 
 }

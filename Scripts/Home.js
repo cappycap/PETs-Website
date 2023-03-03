@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, Animated, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
-import { colors, home } from './Styles.js'
+import { colors, main } from './Styles.js'
 import { useFonts } from 'expo-font'
 import { Button, Icon } from 'react-native-elements'
 import ActivityIndicatorView from './Shared/ActivityIndicatorView.js'
@@ -16,7 +16,7 @@ export default function Home(props) {
     var linkTo = useLinkTo()
 
     // Styling variables.
-    var [styles, setStyles] = useState(home)
+    var [styles, setStyles] = useState(main)
     var { height, width } = useWindowDimensions()
 
     // Admin control variables.
@@ -60,7 +60,42 @@ export default function Home(props) {
         </View>) ||
         (<View style={{flex:1}}>
         {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
-            <Header mobile={mobile} page={0} />
+            <Animated.Image 
+                source={require('../assets/icons/main.png')}
+                style={[styles.logo]}
+            /> 
+            <Text style={styles.largeTitle}>Privacy Enhancing Techniques</Text>
+            <Text style={[styles.paragraph,{marginTop:10}]}>Your personal data is valuable. It's important you understand your data and the basics of privacy and encryption.</Text>
+            <Text style={styles.paragraph}>Complete the three experiences below to begin your journey:</Text>
+            <View style={[styles.row,{marginTop:30}]}>
+                <View style={styles.infoBox}>
+                    <Text style={styles.title}>Encryption Basics</Text>
+                    <Text style={styles.paragraph}>Learn the essentials to how data is kept secret.</Text>
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'View Lesson'}
+                        onPress={() => linkTo('')}
+                    />
+                </View>
+                <View style={[styles.infoBox,{marginLeft:20,marginRight:20}]}>
+                    <Text style={styles.title}>Web Tracking</Text>
+                    <Text style={styles.paragraph}>Learn how your data is tracked and used online.</Text>
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'View Lesson'}
+                        onPress={() => linkTo('')}
+                    />
+                </View>
+                <View style={styles.infoBox}>
+                    <Text style={styles.title}>Anonymity</Text>
+                    <Text style={styles.paragraph}>Learn about what anonymity is and how it works.</Text>
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'View Lesson'}
+                        onPress={() => linkTo('')}
+                    />
+                </View>
+            </View>
         </Animated.View>) || (<View style={styles.construction}>
             <Icon
                 name='construct'

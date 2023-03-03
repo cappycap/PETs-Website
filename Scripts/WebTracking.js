@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, Animated, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
-import { colors, home } from './Styles.js'
+import { colors, main } from './Styles.js'
 import { useFonts } from 'expo-font'
 import { Button, Icon } from 'react-native-elements'
 import ActivityIndicatorView from './Shared/ActivityIndicatorView.js'
@@ -16,7 +16,7 @@ export default function Home(props) {
     var linkTo = useLinkTo()
 
     // Styling variables.
-    var [styles, setStyles] = useState(home)
+    var [styles, setStyles] = useState(main)
     var { height, width } = useWindowDimensions()
 
     // Admin control variables.
