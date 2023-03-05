@@ -39,11 +39,9 @@ export const main = StyleSheet.create({
     alignItems:'center'
   },
   container: {
-    flex:1,
     backgroundColor:colors.mainBackground
   },
   mainContainer: {
-    flex:1,
   },
   row: {
     flexDirection:'row',
@@ -83,11 +81,6 @@ export const main = StyleSheet.create({
   logo: {
     width:160,
     height:140,
-  },
-  infoImg: {
-      height:'100%', 
-      width:'100%',
-      resizeMode: 'center',
   },
   section: {
     margin:20

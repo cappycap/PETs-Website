@@ -60,7 +60,7 @@ export default function WebTracking(props) {
         {!loaded && (<View style={styles.loadingContainer}>
             <ActivityIndicatorView />
         </View>) ||
-        (<View style={{flex:1}}>
+        (<View style={{}}>
         {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
             <Header mobile={mobile} page={0} />
             {section == 0 && (<View style={styles.section}>
@@ -92,13 +92,15 @@ export default function WebTracking(props) {
                         onPress={() => setSection(1)}
                     />
                 </View>
-                
                 <View style = {[styles.infoBox, {borderColor: 'transparent', maxWidth: '50%', margin: 'auto'} ]}>
                     <Text style = {[styles.title, {textAlign: 'left'}]}>What are mixnets?</Text>  
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Mixnets are applications that can obscure the directions that an input takes to get to its output.</Text>
 
                     <Animated.Image source={require('../assets/infopng/mixnet.png')}
-                                    style={[styles.infoImg]}
+                                    style={{
+                                        width:width/2,
+                                        height:(width/2)*(210/870)
+                                    }}
                     />
 
                     <Text style = {[styles.title, {textAlign: 'left', marginTop: 20}]}>How do they work?</Text>
