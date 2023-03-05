@@ -60,7 +60,7 @@ export default function WebTracking(props) {
         {!loaded && (<View style={styles.loadingContainer}>
             <ActivityIndicatorView />
         </View>) ||
-        (<View style={{}}>
+        (<View style={{flex:1}}>
         {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
             <Header mobile={mobile} page={0} />
             {section == 0 && (<View style={styles.section}>
@@ -92,10 +92,10 @@ export default function WebTracking(props) {
                         onPress={() => setSection(1)}
                     />
                 </View>
+                
                 <View style = {[styles.infoBox, {borderColor: 'transparent', maxWidth: '50%', margin: 'auto'} ]}>
                     <Text style = {[styles.title, {textAlign: 'left'}]}>What are mixnets?</Text>  
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Mixnets are applications that can obscure the directions that an input takes to get to its output.</Text>
-
                     <Animated.Image source={require('../assets/infopng/mixnet.png')}
                                     style={{
                                         width:width/2,
@@ -105,34 +105,123 @@ export default function WebTracking(props) {
 
                     <Text style = {[styles.title, {textAlign: 'left', marginTop: 20}]}>How do they work?</Text>
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>First, mixnets require a network of "senders" and "receivers." This is a critical first step.</Text>
-                    <View style = {[styles.infoBox, {borderColor: 'transparent', textAlign: 'center'}]}>
-                        <Text style = {[styles.paragraph]}>image of senders </Text>
-                        <Text style = {[styles.paragraph]}>image of receivers </Text>
-                    </View>
-
+                        <View style = {[styles.row]}>
+                            <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                                <Animated.Image source={require('../assets/infopng/mixnetsenders.png')}
+                                                style={{
+                                                    width:width/6,
+                                                    height:(width/6)*(247/225)
+                                                }}
+                                />
+                            </View>
+                            <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                                    <Animated.Image source={require('../assets/infopng/mixnetreceivers.png')}
+                                                style={{
+                                                    width:width/6,
+                                                    height:(width/6)*(247/225)
+                                                }}
+                                />
+                            </View>
+                        </View>
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Next, the receivers must then encrypt their public-key onto their message so that the mixers can determine who their respective sender is.</Text>
-                    <View style = {[styles.infoBox, {borderColor: 'transparent', textAlign: 'center'}]}>
-                        <Text style = {[styles.paragraph]}>image of senders encrypting their messages with their pk</Text>
+                    <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                                <Animated.Image source={require('../assets/infopng/senderencrypt.png')}
+                                            style={{
+                                                width:width/4,
+                                                height:(width/4)*(35/169)
+                                            }}
+                            />
                     </View>
 
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Before sending their message to the mixers, the receiver must encrypt their message once again, as determined by the mixers. </Text>
-                    <View style = {[styles.infoBox, {borderColor: 'transparent', textAlign: 'center'}]}>
-                        <Text style = {[styles.paragraph]}>image of senders encrypting their messages with mixer pk</Text>
+                    <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                                <Animated.Image source={require('../assets/infopng/mixerencrypt.png')}
+                                            style={{
+                                                width:width/4,
+                                                height:(width/4)*(38/222)
+                                            }}
+                            />
                     </View>
 
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Once the message has been successfully encrypted it will go through mixers until the message has been decrypted to the original message and its public key, </Text>
-                    <View style = {[styles.infoBox, {borderColor: 'transparent', textAlign: 'center'}]}>
-                        <Text style = {[styles.paragraph]}>image of receivers getting the message sent with a shared public key</Text>
+                    <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                                <Animated.Image source={require('../assets/infopng/mixerdecrypt.png')}
+                                            style={{
+                                                width:width/4,
+                                                height:(width/4)*(330/749)
+                                            }}
+                            />
                     </View>
 
-                    
-                    <Text style = {[styles.title, {textAlign: 'left', marginTop: 20}]}>What do they do?</Text>  
-                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Mixnets are applications that can obscure the directions that an input takes to get to its output.</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Ta-dah! The receiver is now able to read the sender's message</Text>
+                    <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                                <Animated.Image source={require('../assets/infopng/receiverdecrypt.png')}
+                                            style={{
+                                                width:width/4,
+                                                height:(width/4)*(49/68)
+                                            }}
+                            />
+                    </View>
+
+                    <Text style = {[styles.title, {textAlign: 'left', marginTop: 20}]}>What are the real-world applications of this technique?</Text>  
+                    <View style = {[styles.row, {marginTop:30}]}>
+                        <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                            <Animated.Image source={require('../assets/infopng/messages.png')}
+                                            style={{
+                                                width:width/6,
+                                                height:(width/6)*(512/512)
+                                            }}
+                            />
+                        </View>
+                        <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                            <Animated.Image source={require('../assets/infopng/torpng.png')}
+                                            style={{
+                                                width:width/6,
+                                                height:(width/6)*(512/512)
+                                            }}
+                            />
+                        </View>
+                        <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                            <Animated.Image source={require('../assets/infopng/email.png')}
+                                            style={{
+                                                width:width/6,
+                                                height:(width/6)*(512/512)
+                                            }}
+                            />
+                        </View>
+
+                        <View style = {[styles.infoBox, {borderColor: 'transparent', maxWidth: '50%', margin: 'auto'} ]}>
+                            
+                        </View>
+                    </View>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Mixers and techniques similar to it are most commonly found through applications that have networks of people sending messages to their service. These mixnets allow for confidentiality and the integrity of the messages to be maintained.</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}> </Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>The Tor browser is one of the most popular use cases of such. The user's connection to the Tor servers are unknown due to their connection being encrypted and bounced to different connection nodes. Just like in the mixnet, their connection gets decrypted at every step, until finally it is released to the internet.</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}> </Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Messages and emails work in exactly the way described above. Companies can't possibly provide each of their customers with their own network as a means for anonymity. And besides, no network can be perfectly secure. Therefore they conclude to use the size of their customers to their advantage by promoting anonymity through obscurity. By jumbling their customer's information together, even if the attacker gets past the network's secruity AND takes the message, they would have to figure out who's message it was going and which person it was going to.</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}> </Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>These are the strengths of utilizing mixnets, however they do come at a cost</Text>
+
+                    <Text style = {[styles.title, {textAlign: 'left', marginTop: 20}]}>What do I have to pay to use this?</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left', marginTop: 20}]}>Simple! Time and Power.</Text>
+                    <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                            <Animated.Image source={require('../assets/infopng/encdectime.png')}
+                                            style={{
+                                                width:width/3,
+                                                height:(width/3)*(150/579)
+                                            }}
+                            />
+                        </View>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Encryption and decryption are expensive operations, especially if the keys are long. The image above shows times for encryption and decryption on a single AES-128 key. In the worst-case where the company utilized the weakest CPU to encrypt the sender's message, it would take 60 amount of cycles. If the company were to scale the power of their computations, it would drop all the way to 6 cycles, a 10x gap! Likewise for decryprting, it would take around 6x the amount of cycles. That's not to include the possiblity of multiple mixers being present in the mixnet.</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}> </Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>It is important when you are planning to implement mixnets to take into account the costs that must be sacrificed.</Text>
+
+                    <Text style = {[styles.largeTitle, {textAlign: 'center', marginTop: 20}]}>Interactive Activity</Text>
                 </View>
             </View>)}
             {section == 1 && (<View style={styles.section}>
                 <View style={styles.sectionContent}>
-                    <Text style={styles.paragraph}>I am content as well!</Text>
+                    <Text style = {[styles.largeTitle]}>Psuedonymization</Text>
                 </View>
                 <View style={styles.sectionNav}>
                     <Button 
@@ -159,6 +248,8 @@ export default function WebTracking(props) {
                         disabled={true}
                     />
                 </View>
+
+                
             </View>)}
         </Animated.View>) || (<View style={styles.construction}>
             <Icon
