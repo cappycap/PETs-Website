@@ -84,6 +84,11 @@ export const main = StyleSheet.create({
     width:160,
     height:140,
   },
+  infoImg: {
+      height:'100%', 
+      width:'100%',
+      resizeMode: 'center',
+  },
   section: {
     margin:20
   },
