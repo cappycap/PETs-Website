@@ -131,7 +131,7 @@ export default function WebTracking(props) {
                     <Text style={styles.paragraph}>image list here!</Text>
                 </View>
                 <View style={[styles.sectionContent,{marginTop:20}]}>
-                    <Text style={styles.paragraph}></Text>
+                    <Text style={styles.paragraph}>It can be scary to think all of this data is accessible, but luckily we have tools to protect us...</Text>
                 </View>
             </View>)}
             {section == 2 && (<View style={styles.section}>
