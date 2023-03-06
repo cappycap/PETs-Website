@@ -211,7 +211,7 @@ export default function WebTracking(props) {
                                                 height:(width/3)*(150/579)
                                             }}
                             />
-                    </View>
+                        </View>
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Encryption and decryption are expensive operations, especially if the keys are long. The image above shows times for encryption and decryption on a single AES-128 key. In the worst-case where the company utilized the weakest CPU to encrypt the sender's message, it would take 60 amount of cycles. If the company were to scale the power of their computations, it would drop all the way to 6 cycles, a 10x gap! Likewise for decryprting, it would take around 6x the amount of cycles. That's not to include the possiblity of multiple mixers being present in the mixnet.</Text>
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}> </Text>
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>It is important when you are planning to implement mixnets to take into account the costs that must be sacrificed.</Text>
@@ -248,7 +248,7 @@ export default function WebTracking(props) {
                         disabled={true}
                     />
                 </View>
-
+                
                 <View style = {[styles.infoBox, {borderColor: 'transparent', maxWidth: '50%', margin: 'auto'} ]}>
                     <Text style = {[styles.title, {textAlign: 'left'}]}>What is pseudonymization?</Text>  
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Pseudonymization is the process of taking data and altering it in a way that others cannot uniquely identify it. Take the table below, it has no pseudonymization techniques applied to it making it easy for attackers to identify a target in a dataset. </Text>
@@ -263,12 +263,21 @@ export default function WebTracking(props) {
                     
                     
                     <Text style = {[styles.title, {textAlign: 'left', marginTop:20}]}>Pseuonymization techniques you can use</Text>
-                    <Text style = {[styles.title, {textAlign: 'left', marginTop:20}]}>censor your content</Text>
-                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>If a datapoint can aid in uniquely identifying a subject in a dataset, you should think of censoring that content. This includes emails, phone numbers, addresses, etc. </Text>
+                    <Text style = {[styles.title, {textAlign: 'left', marginTop:20}]}>Censor your content</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Let's say you are maintaining a database with the information above. There exists key attributes, quasi-identifiers, and the sensitive attribute. If an attacker were to look at your database the key attribute along with the quasi-identifiers can easily link them to the senstive information they want to hide. Therefore the first step to anonymizing data is to outright censor key attributes. This includes emails, phone numbers, addresses, etc. </Text>
+                    <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
+                            <Animated.Image source={require('../assets/infopng/uniquetable.png')}
+                                                style={{
+                                                    width:width/3,
+                                                    height:(width/3)*(291/682)
+                                                }}
+                            />
+                    </View>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>Poof! If an attacker was trying to tie the sensitive information to a target, their job just became significantly harder. Take Beth's situation, now attacker must now look for females born on 4/13/86, in the zip code 53715 who have heaptitis to be able to know Beth has hepatitis. That could be anyone in the world! That being said, this table still gives too much information to the attacker, so let us move onto the next step you can take.</Text>
                     
 
-                    <Text style = {[styles.title, {textAlign: 'left', marginTop:20}]}>k-anonymity</Text>
-                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>When given a set of data, we want to make sure that each data point cannot be easily distinguished from another. To do so, we form buckets of information rather than displaying each attribute as it was recorded. For example, take the following table, of the two, which table gives you the most information?</Text>
+                    <Text style = {[styles.title, {textAlign: 'left', marginTop:20}]}>K-anonymity</Text>
+                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>When given a set of data, we want to make sure that the quasi-identifiers themselves cannot easily distinguish a certain person. As said previously, it will be harder to find Beth with only quasi-identifiers, but it can still be done. DOB and zipcode especially have the ability to track a person down. To alleviate this, we want to form buckets of information. For example, take the following tables, of the two, which table gives you the most information?</Text>
                     <View style = {[styles.row, {marginTop:30}]}>
                         <View style = {[styles.infoBox, {borderColor: 'transparent'}]}>
                                 <Animated.Image source={require('../assets/infopng/kdata.png')}
@@ -288,10 +297,9 @@ export default function WebTracking(props) {
                         </View>
                     </View>
                     <Text style = {[styles.paragraph, {textAlign: 'left'}]}>The one on the left, correct? The table on the right is how k-anonymity is applied. It generalizes the data into buckets and as a result provides more anonymity to the owner!</Text>
-                    
-                    <Text style = {[styles.title, {textAlign: 'left', marginTop:20}]}>unknown sampling frame</Text>
-                    <Text style = {[styles.paragraph, {textAlign: 'left'}]}>When given a set of data, we want to make sure that each data point cannot be easily distinguished from another. To do so, we form buckets of information rather than displaying each attribute as it was recorded. For example, take the following table, of the two, which table gives you the most information?</Text>
+                    <Text style = {[styles.largeTitle, {textAlign: 'center', marginTop: 20}]}>Interactive Activity: Attacker</Text>
                 </View>
+                
             </View>)}
         </Animated.View>) || (<View style={styles.construction}>
             <Icon
