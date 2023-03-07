@@ -281,6 +281,44 @@ export default function WebTracking(props) {
                     <Text style={[styles.paragraph]}>The one on the left, correct? The table on the right is how k-anonymity is applied. It generalizes the data into buckets and as a result provides more anonymity to the owner!</Text>
                 </View>
             </View>)}
+            {section == 2 && (<View style={styles.section}>
+                <View style={styles.sectionContent}>
+                    <Text style={[styles.largeTitle]}>Final Thoughts</Text>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>Thank you for taking the time to read through our education material!</Text>
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>Feel free to reach out with any ideas for improvement: <TouchableOpacity onPress={() => window.open('mailto:bullara2@wwu.edu', '_blank')}><Text style={styles.link}>bullara2@wwu.edu</Text></TouchableOpacity></Text>
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>This site was made by Adam Bullard and Orlando Besorio for CSCI 497X/597X Winter 2023 at WWU</Text>
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>Thank you to the following individuals and websites for their educational materials or images:</Text>
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph,styles.link]}>
+                            <TouchableOpacity onPress={() => window.open('https://www.shrirangmare.com/cs497x-597x/', '_blank')}>
+                                Dr. Shrirang Mare
+                            </TouchableOpacity>
+                        </Text>
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph,styles.link]}>
+                            <TouchableOpacity onPress={() => window.open('https://courses.cs.washington.edu/courses/cse484/21sp/', '_blank')}>
+                                Dr. Yoshi Kohno
+                            </TouchableOpacity>
+                        </Text>
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph,styles.link]}>
+                            <TouchableOpacity onPress={() => window.open('https://www.bounteous.com/insights/2020/04/09/google-chrome-third-party-cookies', '_blank')}>
+                                Bounteous.com
+                            </TouchableOpacity>
+                        </Text>
+                    </View>
+                </View>
+            </View>)}
             <View style={[styles.sectionNav,{margin:20}]}>
                 <Button 
                     buttonStyle={styles.navButton}
@@ -300,7 +338,7 @@ export default function WebTracking(props) {
                     }
                     }
                 />
-                {section == 0 && (<Button 
+                {section != 2 && (<Button 
                     buttonStyle={styles.navButton}
                     title={'Forward'}
                     icon={<Icon
