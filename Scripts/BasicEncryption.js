@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { TouchableOpacity, Animated, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, Animated, StyleSheet, Text, View, TextInput } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { colors, main } from './Styles.js'
@@ -56,6 +56,69 @@ export default function WebTracking(props) {
 
     const [section, setSection] = useState(0)
 
+    // Caesar
+    const [plaintext, setPlaintext] = useState('')
+    const [shift, setShift] = useState(3)
+    const [shiftText, setShiftText] = useState('3')
+    const [encoded, setEncoded] = useState([])
+    const [encodedText, setEncodedText] = useState('')
+
+    const encodeCaesar = (text, shiftOverride=null) => {
+
+        var actualShift = (shiftOverride == null) ? shift : shiftOverride
+        var newEncoded = []
+        var newEncodedText = ''
+
+        for (var i = 0; i < text.length; i++) {
+
+            if (i < 15 && shift != null) {
+
+                var char = text[i].toUpperCase()
+                if (char != ' ') {
+                    var charOld = char
+                    char = char.charCodeAt(0)
+                    if (char - actualShift < 65) {
+                        // We need to wrap back around and not decrement out of A-Z charspace.
+                        char = 91 + (char-65)
+                    }
+                    var shiftedChar = String.fromCharCode(char - actualShift);
+                    newEncodedText = newEncodedText + shiftedChar
+
+                    newEncoded.push([charOld, shiftedChar])
+                }
+                
+            } else {
+                break
+            }
+
+        }
+
+        setPlaintext(text)
+        setEncoded(newEncoded)
+        setEncodedText(newEncodedText)
+
+    }
+
+    const applyShift = (text) => {
+
+        if (text.length < 2) {
+
+            setShiftText(text)
+        
+            if (!isNaN(text)) {
+                var num = Number(text)
+                setShift(num)
+                encodeCaesar(plaintext, num)
+            } else {
+                setShift(null)
+            }
+
+            
+
+        }
+
+    }
+
     return (<View style={styles.container}>
         {!loaded && (<View style={styles.loadingContainer}>
             <ActivityIndicatorView />
@@ -103,6 +166,48 @@ export default function WebTracking(props) {
                     <Text style={[styles.paragraph]}>What happens if you use a letter like A that doesn't have any characters "before it" in the alphabet?</Text>  
                 </View> 
                 <View style={styles.encryptionActivity}>
+                    <View style={styles.encryptionSettings}>
+                        <View style={{flex:1}}>
+                            <Text style={styles.inputText}>
+                                Message to Encode
+                            </Text>
+                            <TextInput 
+                                style={styles.input}
+                                onChangeText={(t) => encodeCaesar(t)}
+                                value={plaintext}
+                                placeholder={'Message...'}
+                            />
+                        </View>
+                        <View style={{marginLeft:20}}>
+                            <Text style={styles.inputText}>
+                                Left Shift
+                            </Text>
+                            <TextInput 
+                                style={styles.input}
+                                onChangeText={(t) => applyShift(t)}
+                                value={shiftText}
+                            />
+                        </View>
+                    </View>
+                    {encoded.length == 0 && (<View style={styles.encryptionOutput}>
+                        <Text style={[styles.paragraph]}>Waiting for valid message and shift...</Text>
+                    </View>) || (<View style={styles.encryptionOutput}>
+                        {encoded.map((set, index) => {
+                            return (<View key={'set_'+index} style={styles.encryptionColumn}>
+                                 <Text style={[styles.title]}>{set[0]}</Text>
+                                 <Icon
+                                    name='chevron-down'
+                                    type='ionicon'
+                                    size={16}
+                                    color={colors.mainTextColor}
+                                />
+                                 <Text style={[styles.title]}>{set[1]}</Text>
+                            </View>)
+                        })}
+                    </View>)}
+                    {encoded.length > 0 && (<View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>Final encrypted message: <Text style={{fontFamily:'PoppinsSemiBold'}}>{encodedText}</Text></Text>  
+                    </View>)}
                 </View>
                 <View style={styles.sectionContent}>
                     <Text style={[styles.paragraph]}>Feel free to keep messing around with this cipher tool until you know what's happening.</Text>  

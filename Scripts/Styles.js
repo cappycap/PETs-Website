@@ -108,6 +108,43 @@ export const main = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     margin:20
+  },
+  encryptionActivity: {
+    padding:20,
+    borderWidth:5,
+    borderColor:colors.mainHighlight,
+    backgroundColor:colors.secondaryBackground,
+    marginTop:20,
+    marginBottom:20
+  },
+  encryptionSettings: {
+    flexDirection:'row',
+    alignItems:'center',
+    marginBottom:20
+  },
+  input: {
+    backgroundColor:colors.mainBackground,
+    borderRadius:20,
+    padding:10,
+    color:colors.mainTextColor
+  },
+  inputText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:18,
+    color:colors.mainTextColor,
+    flexWrap:'wrap',
+    marginBottom:5
+  },
+  encryptionOutput: {
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  encryptionColumn: {
+    padding:10,
+    borderRadius:20,
+    backgroundColor:colors.mainBackground,
+    marginRight:10
   }
 })
 
