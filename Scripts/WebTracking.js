@@ -192,6 +192,9 @@ export default function WebTracking(props) {
                 <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Understanding what trackers are interested in is crucial to protecting yourself.</Text>
                 </View>
+                <View style={styles.sectionContent}>
+                    <Text style = {[styles.title, {marginTop:20}]}>Interactive Activity: Grabbing Device Data</Text>
+                </View>  
                 <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Here is a demonstration of everything we can pull from your device (with your permission!)</Text>
                 </View>
@@ -255,7 +258,7 @@ export default function WebTracking(props) {
                     <Text style={styles.paragraph}>What we can grab above using JavaScript on our relatively simple website is just the beginning of information available to track online.</Text>
                 </View>
                 <View style={[styles.sectionContent]}>
-                    <Text style={styles.paragraph}>Here is what is commonly tracked online, using a combination of information grabbed from users combined with cookies and cross-site tracking:</Text>
+                    <Text style={styles.paragraph}>Here is what is commonly tracked online, using a combination of information grabbed from users combined with cookies and cross-site tracking. Check out each source to learn more about a specific topic!</Text>
                 </View>
                 <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>IP Address</Text>
