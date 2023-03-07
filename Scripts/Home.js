@@ -54,7 +54,7 @@ export default function Home(props) {
         }
     }, [width])
 
-    return (<View style={styles.container}>
+    return (<View style={[styles.container,{flex:1}]}>
         {!loaded && (<View style={styles.loadingContainer}>
             <ActivityIndicatorView />
         </View>) ||

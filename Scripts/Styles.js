@@ -39,7 +39,8 @@ export const main = StyleSheet.create({
     alignItems:'center'
   },
   container: {
-    backgroundColor:colors.mainBackground
+    backgroundColor:colors.mainBackground,
+    flex:1
   },
   mainContainer: {
   },
@@ -89,6 +90,15 @@ export const main = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-between'
+  },
+  webTrackingInteractiveContainer: {
+    alignItems:'center',
+    marginTop:20
+  },
+  link: {
+    fontFamily:'PoppinsBold',
+    textDecorationLine:'underline',
+    textDecorationColor:colors.mainTextColor
   }
 })
 
