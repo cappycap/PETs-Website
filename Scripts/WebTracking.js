@@ -155,15 +155,15 @@ export default function WebTracking(props) {
                                     }}
                     />
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>When your browser requests a web page to load, that web page can return information called cookies, which your browser will hold onto after you have left that site.</Text>
                 </View>
                 
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>This cookie will sit within your browser, and can be read by the same or other websites you visit.</Text>
                 </View>
 
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>While the image above shows only one server exchange, this one has two to demonstrate this tracking method. In this case, the cookie may contain any identifying information:</Text>
                 </View>
 
@@ -176,11 +176,11 @@ export default function WebTracking(props) {
                     />
                 </View>
 
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>While this shows off what an interaction with one site looks like, remember that your cookies simply sit on your hard drive. Almost any site can read them! This is the most common purpose of cookies: advertisers use them to track your interests and actions across the Internet!</Text>
                 </View>
 
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>In our next lesson, we will discuss what can be seen and tracked in cookies. Then finally, we will learn how to protect against this tracking.</Text>
                 </View>
                 
@@ -189,10 +189,10 @@ export default function WebTracking(props) {
                 <View style={styles.sectionContent}>
                     <Text style={styles.largeTitle}>What Can Be Seen</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Understanding what trackers are interested in is crucial to protecting yourself.</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Here is a demonstration of everything we can pull from your device (with your permission!)</Text>
                 </View>
                 {!infoLoading && (<View style={styles.webTrackingInteractiveContainer}>
@@ -251,37 +251,37 @@ export default function WebTracking(props) {
                 </View>) || (<View style={styles.webTrackingInteractiveContainer}>
                     <ActivityIndicatorView />
                 </View>)}
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>What we can grab above using JavaScript on our relatively simple website is just the beginning of information available to track online.</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Here is what is commonly tracked online, using a combination of information grabbed from users combined with cookies and cross-site tracking:</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>IP Address</Text>
                     <Text style={styles.paragraph}>This is a unique number assigned to your device by your internet service provider (ISP) that can be used to track your location and browsing activity. Source: <TouchableOpacity onPress={() => window.open('https://privacy.net/ip-address/', '_blank')}><Text style={styles.link}>Privacy.net</Text></TouchableOpacity></Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Device Information</Text>
                     <Text style={styles.paragraph}>Using methods similar to our own site, advertisers can collect information about your device, such as the operating system, browser type, and screen resolution, to optimize their content and target ads. Source: <TouchableOpacity onPress={() => window.open('https://policies.google.com/technologies/device-information', '_blank')}><Text style={styles.link}>Google</Text></TouchableOpacity></Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Demographic Information</Text>
                     <Text style={styles.paragraph}>Websites and advertisers can collect information you submit about your age, gender, income, and other demographic data to target ads and personalize content. Source: <TouchableOpacity onPress={() => window.open('https://www.nielsen.com/us/en/solutions/capabilities/consumer-insights-behavioral-measurement/', '_blank')}><Text style={styles.link}>Nielsen</Text></TouchableOpacity></Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Web Beacons</Text>
                     <Text style={styles.paragraph}>Also known as tracking pixels or clear gifs, these are small image files that are embedded in websites or emails to track user behavior. Often used in conjunction with cookies. Source: <TouchableOpacity onPress={() => window.open('https://www.eff.org/issues/online-tracking', '_blank')}><Text style={styles.link}>Electronic Frontier Foundation</Text></TouchableOpacity></Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Geolocation</Text>
                     <Text style={styles.paragraph}>Websites can use your IP address or GPS data to determine your location, which can be used to deliver targeted content and ads. Source: <TouchableOpacity onPress={() => window.open('https://www.kaspersky.com/resource-center/definitions/geolocation', '_blank')}><Text style={styles.link}>Kaspersky</Text></TouchableOpacity></Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Search Queries</Text>
                     <Text style={styles.paragraph}>Search engines like Google can track your search history to deliver personalized results and ads. Source: <TouchableOpacity onPress={() => window.open('https://policies.google.com/technologies/ads', '_blank')}><Text style={styles.link}>Google</Text></TouchableOpacity></Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Social Media Activity</Text>
                     <Text style={styles.paragraph}>Websites and advertisers can track your social media activity, such as likes, shares, and comments across sites using cookies to target ads and create user profiles. Source: <TouchableOpacity onPress={() => window.open('https://www.eff.org/issues/social-networks', '_blank')}><Text style={styles.link}>Electronic Frontier Foundation</Text></TouchableOpacity></Text>
                 </View>
@@ -291,19 +291,19 @@ export default function WebTracking(props) {
                 </View>
             </View>)}
             {section == 2 && (<View style={styles.section}>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.largeTitle}>How to Protect Yourself</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>There are several ways you can protect yourself online.</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Virtual Private Networks (VPNs)</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>The first are VPNs, which help protect your online activity from being traced back to you.</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>They do this by acting as a buffer between your device and the internet:</Text>
                 </View>
                 <View style={{justifyContent:'center',alignItems:'center',margin:20}}>
@@ -314,19 +314,19 @@ export default function WebTracking(props) {
                         }}
                     />
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Actions you wish to take online are passed to your ISP, who sends that info to the VPN. The VPN performs this action on your behalf and reports the result to you. The internet only sees the VPN, protecting your identity!</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>These VPNs are widely accessible online for free, trial periods, and purchase. We recommend <TouchableOpacity onPress={() => window.open('https://nordvpn.com/vpn-site/', '_blank')}><Text style={styles.link}>NordVPN</Text></TouchableOpacity> for an easy to use and affordable solution. It should be noted that both your ISP and the VPN itself are capable of tracking you as well. That's why it's important to use a trustworthy VPN and ISP.</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.title}>Ad Blockers</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>You can also protect yourself by installing an ad blocker. These browser extensions will eliminate ads across websites, preventing them from tracking you and cleaning up your web experience.</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Ad blockers do this by lifting out specific pieces of code in a webpage identified as an advertisement using a set of known advertiser filterlists, preventing the ad's code from tracking you and you from seeing the ad itself.</Text>
                 </View>
                 <View style={{justifyContent:'center',alignItems:'center',margin:20}}>
@@ -337,13 +337,13 @@ export default function WebTracking(props) {
                         }}
                     />
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>There are a multitude of effective ad blockers for almost every browser. Head to your browser's extension store and search for ad blockers to find one for your browser.</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>One we recommend available on almost all browsers is <TouchableOpacity onPress={() => window.open('https://ublockorigin.com/', '_blank')}><Text style={styles.link}>uBlock Origin</Text></TouchableOpacity>. This ad blocker is free, open sourcce, and effective at its job. What more could you ask for?</Text>
                 </View>
-                <View style={[styles.sectionContent,{marginTop:20}]}>
+                <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>At the end of the day, it's important to remember how to protect yourself online and be knowledgable of how the world of online privacy is growing and evolving.</Text>
                 </View>
             </View>)}
@@ -368,7 +368,7 @@ export default function WebTracking(props) {
                 />
                 <Button 
                     buttonStyle={styles.navButton}
-                    title={section == 2 ? 'Move on to Anonymity!' : 'Forward'}
+                    title={section == 2 ? 'Move on to Encryption!' : 'Forward'}
                     icon={<Icon
                         name='chevron-forward'
                         type='ionicon'
@@ -377,7 +377,7 @@ export default function WebTracking(props) {
                         style={{marginTop:2}}
                     />}
                     iconRight={true}
-                    onPress={(section == 2) ? () => linkTo('/anonymity') : () => {
+                    onPress={(section == 2) ? () => linkTo('/basic-encryption') : () => {
                         document.body.scrollTop = document.documentElement.scrollTop = 0;
                         setSection(section+1)
                     }}

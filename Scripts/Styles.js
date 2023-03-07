@@ -99,6 +99,9 @@ export const main = StyleSheet.create({
     fontFamily:'PoppinsBold',
     textDecorationLine:'underline',
     textDecorationColor:colors.mainTextColor
+  },
+  sectionContent: {
+    marginTop:20,
   }
 })
 

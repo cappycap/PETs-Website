@@ -47,12 +47,6 @@ export default function Header(props) {
             </TouchableOpacity>) || (<TouchableOpacity style={styles.headerBoxMobile} onPress={() => linkTo('/')}>
                 <Text style={[styles.headerBoxTextMobile]}>Home</Text>
             </TouchableOpacity>)}
-            {props.page == 1 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
-                <Text style={[styles.headerBoxTextMobileFocused]}>Basic Encryption</Text>
-                <View style={styles.headerListItemDot}></View>
-            </TouchableOpacity>) || (<TouchableOpacity style={styles.headerBoxMobile} onPress={() => linkTo('/basic-encryption')}>
-                <Text style={[styles.headerBoxTextMobile]}>Basic Encryption</Text>
-            </TouchableOpacity>)}
             {enableMintAndQuests && (<View>
                 {props.page == 2 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
                     <Text style={[styles.headerBoxTextMobileFocused]}>Web Tracking</Text>
@@ -61,6 +55,12 @@ export default function Header(props) {
                     <Text style={[styles.headerBoxTextMobile]}>Web Tracking</Text>
                 </TouchableOpacity>)}
             </View>)}
+            {props.page == 1 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
+                <Text style={[styles.headerBoxTextMobileFocused]}>Basic Encryption</Text>
+                <View style={styles.headerListItemDot}></View>
+            </TouchableOpacity>) || (<TouchableOpacity style={styles.headerBoxMobile} onPress={() => linkTo('/basic-encryption')}>
+                <Text style={[styles.headerBoxTextMobile]}>Basic Encryption</Text>
+            </TouchableOpacity>)}
             {enableMintAndQuests && (<View>
                 {props.page == 3 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
                     <Text style={[styles.headerBoxTextMobileFocused]}>Anonymity</Text>
@@ -81,12 +81,12 @@ export default function Header(props) {
             <TouchableOpacity style={styles.headerBox} onPress={() => linkTo('/')}>
                 <Text style={[styles.headerBoxText]}>Home</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.headerBox} onPress={() => linkTo('/basic-encryption')}>
-                <Text style={[styles.headerBoxText]}>Basic Encryption</Text>
-            </TouchableOpacity>
             {enableMintAndQuests && (<TouchableOpacity style={styles.headerBox} onPress={() => linkTo('/web-tracking')}>
                 <Text style={[styles.headerBoxText]}>Web Tracking</Text>
             </TouchableOpacity>)}
+            <TouchableOpacity style={styles.headerBox} onPress={() => linkTo('/basic-encryption')}>
+                <Text style={[styles.headerBoxText]}>Basic Encryption</Text>
+            </TouchableOpacity>
             {enableMintAndQuests && (<TouchableOpacity style={styles.headerBox} onPress={() => linkTo('/anonymity')}>
                 <Text style={[styles.headerBoxText]}>Anonymity</Text>
             </TouchableOpacity>)}

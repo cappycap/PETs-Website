@@ -68,22 +68,22 @@ export default function Home(props) {
             <Text style={[styles.paragraph,{marginTop:10}]}>Your personal data is valuable. It's important you understand your data and the basics of privacy and encryption.</Text>
             <Text style={styles.paragraph}>Complete the three experiences below to begin your journey:</Text>
             <View style={[styles.row,{marginTop:30}]}>
-                <View style={styles.infoBox}>
-                    <Text style={styles.title}>Encryption Basics</Text>
-                    <Text style={styles.paragraph}>Learn the essentials to how data is kept secret.</Text>
-                    <Button 
-                        buttonStyle={styles.navButton}
-                        title={'View Lesson'}
-                        onPress={() => linkTo('/encryption-basics')}
-                    />
-                </View>
-                <View style={[styles.infoBox,{marginLeft:20,marginRight:20}]}>
+                <View style={[styles.infoBox]}>
                     <Text style={styles.title}>Web Tracking</Text>
                     <Text style={styles.paragraph}>Learn how your data is tracked and used online.</Text>
                     <Button 
                         buttonStyle={styles.navButton}
                         title={'View Lesson'}
                         onPress={() => linkTo('/web-tracking')}
+                    />
+                </View>
+                <View style={[styles.infoBox,{marginLeft:20,marginRight:20}]}>
+                    <Text style={styles.title}>Encryption Basics</Text>
+                    <Text style={styles.paragraph}>Learn the essentials to how data is kept secret.</Text>
+                    <Button 
+                        buttonStyle={styles.navButton}
+                        title={'View Lesson'}
+                        onPress={() => linkTo('/encryption-basics')}
                     />
                 </View>
                 <View style={styles.infoBox}>
