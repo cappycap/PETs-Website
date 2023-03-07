@@ -147,7 +147,7 @@ export default function WebTracking(props) {
                 <View style={styles.sectionContent}>
                     <Text style={styles.paragraph}>The browser you are currently using is simply software on your computer. This software communicates over the internet with a range of servers, who pass on or deliver data to create the web experience you know.</Text>
                 </View>
-                <View style={{justifyContent:'center',alignItems:'center',margin:20}}>
+                <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking1.jpeg')}
                                     style={{
                                         width:width/2,
@@ -167,7 +167,7 @@ export default function WebTracking(props) {
                     <Text style={styles.paragraph}>While the image above shows only one server exchange, this one has two to demonstrate this tracking method. In this case, the cookie may contain any identifying information:</Text>
                 </View>
 
-                <View style={{justifyContent:'center',alignItems:'center',margin:20}}>
+                <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking2.png')}
                                     style={{
                                         width:width/2,
@@ -306,7 +306,7 @@ export default function WebTracking(props) {
                 <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>They do this by acting as a buffer between your device and the internet:</Text>
                 </View>
-                <View style={{justifyContent:'center',alignItems:'center',margin:20}}>
+                <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking3.jpeg')}
                         style={{
                             width:width/2,
@@ -329,7 +329,7 @@ export default function WebTracking(props) {
                 <View style={[styles.sectionContent]}>
                     <Text style={styles.paragraph}>Ad blockers do this by lifting out specific pieces of code in a webpage identified as an advertisement using a set of known advertiser filterlists, preventing the ad's code from tracking you and you from seeing the ad itself.</Text>
                 </View>
-                <View style={{justifyContent:'center',alignItems:'center',margin:20}}>
+                <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking4.png')}
                         style={{
                             width:width/2,

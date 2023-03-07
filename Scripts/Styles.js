@@ -102,6 +102,11 @@ export const main = StyleSheet.create({
   },
   sectionContent: {
     marginTop:20,
+  },
+  contentImageContainer: {
+    justifyContent:'center',
+    alignItems:'center',
+    margin:20
   }
 })
 
