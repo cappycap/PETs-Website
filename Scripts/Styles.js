@@ -109,7 +109,7 @@ export const main = StyleSheet.create({
     alignItems:'center',
     margin:20
   },
-  encryptionActivity: {
+  activity: {
     padding:20,
     borderWidth:5,
     borderColor:colors.mainHighlight,
@@ -145,7 +145,24 @@ export const main = StyleSheet.create({
     borderRadius:20,
     backgroundColor:colors.mainBackground,
     marginRight:10
-  }
+  },
+  options: {
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  answerRow: {
+    flexDirection:'row',
+    alignItems:'center',
+    marginBottom:10,
+    justifyContent:'center'
+  },
+  answer: {
+    fontFamily:'Poppins',
+    fontSize:18,
+    color:colors.mainTextColor,
+    flexWrap:'wrap',
+    marginLeft:10,
+  },
 })
 
 export const header = StyleSheet.create({

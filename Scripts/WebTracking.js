@@ -203,7 +203,7 @@ export default function WebTracking(props) {
                         buttonStyle={[styles.navButton,{width:width/2}]}
                         title={'Find Data'}
                         onPress={() => getUserData()}
-                    />) || (<View style={styles.infoBox}>
+                    />) || (<View style={styles.activity}>
                         <Text style={styles.title}>JavaScript Information Readout</Text>
                         {userData.ip != undefined && (<Text style={styles.paragraph}>
                             <Text style={{fontFamily:'PoppinsSemiBold'}}>IP Address:</Text> {userData.ip}

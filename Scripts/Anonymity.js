@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, Animated, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
-import { colors, main } from './Styles.js'
+import { colors, main, btnColors } from './Styles.js'
 import { useFonts } from 'expo-font'
 import { Button, Icon } from 'react-native-elements'
 import ActivityIndicatorView from './Shared/ActivityIndicatorView.js'
@@ -54,7 +54,33 @@ export default function WebTracking(props) {
         }
     }, [width])
 
-    const [section, setSection] = useState(0)
+    const [section, setSection] = useState(2)
+
+    const [answers, setAnswers] = useState([
+        [
+            ['Row 1', 'Row 8', 'Row 10'], // opts
+            2, // right answer index
+            -1 // user answer
+        ],
+        [
+            ['Row 1', 'Row 3', 'Row 10'], // opts
+            1, // right answer index
+            -1 // user answer
+        ],
+        [
+            ['Left', 'Right'], // opts
+            0, // right answer
+            -1 // user answer
+        ],
+    ])
+
+    const updateAnswer = (set, index) => {
+
+        var newAnswers = JSON.parse(JSON.stringify(answers))
+        newAnswers[set][2] = index
+        setAnswers(newAnswers)
+
+    }
 
     return (<View style={styles.container}>
         {!loaded && (<View style={styles.loadingContainer}>
@@ -282,6 +308,152 @@ export default function WebTracking(props) {
                 </View>
             </View>)}
             {section == 2 && (<View style={styles.section}>
+                <View style={styles.sectionContent}>
+                    <Text style={[styles.largeTitle]}>Interactive Activity: Identification</Text>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>In this activity, you will take on the role of an attacker trying to identify a person in a database.</Text>
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>Here is that person:</Text>
+                    </View>
+                    <View style={styles.contentImageContainer}>
+                    <Animated.Image source={require('../assets/infopng/person.png')}
+                                style={{
+                                width:width/3,
+                                height:(width/3)*(164/1346)
+                            }}
+                        />
+                    </View>
+                    <View style={styles.sectionContent}>
+                        <Text style={[styles.paragraph]}>And here are two databases, one which has applied pseudonymization correctly, and one that hasn't:</Text>
+                    </View>
+                    <View style={styles.row}>
+                        <View style={styles.contentImageContainer}>
+                            <Animated.Image source={require('../assets/infopng/badtable.png')}
+                                    style={{
+                                    width:width/3,
+                                    height:(width/3)*(760/1336)
+                                }}
+                            />
+                        </View>
+                        <View style={styles.contentImageContainer}>
+                            <Animated.Image source={require('../assets/infopng/goodtable.png')}
+                                    style={{
+                                    width:width/3,
+                                    height:(width/3)*(764/1332)
+                                }}
+                            />
+                        </View>
+                    </View>
+                    <View style={styles.activity}>
+                        <View style={[styles.sectionContent,{marginTop:0}]}>
+                            <Text style={[styles.paragraph]}>Try and guess which row represents the person in each table:</Text>
+                        </View>
+                        <View style={styles.row}>
+                        <View style={[styles.options,{marginRight:20}]}>
+                                <Text style={styles.title}>Left Table</Text>
+                                {answers[0][0].map((answer, index) => {
+                                    return (<TouchableOpacity onPress={() => updateAnswer(0, index)} style={styles.answerRow} key={'q1_'+index}>
+                                        {answers[0][2] == index && (<View>
+                                            {answers[0][2] == answers[0][1] && (<View>
+                                                <Icon
+                                                    name='checkmark'
+                                                    type='ionicon'
+                                                    size={16}
+                                                    color={btnColors.success}
+                                                />
+                                            </View>) || (<View>
+                                                <Icon
+                                                    name='close'
+                                                    type='ionicon'
+                                                    size={16}
+                                                    color={btnColors.danger}
+                                                />
+                                            </View>)}
+                                        </View>) || (<View>
+                                                <Icon
+                                                    name='ellipse-outline'
+                                                    type='ionicon'
+                                                    size={16}
+                                                    color={colors.mainTextColor}
+                                                />
+                                            </View>)}
+                                        {answers[0][2] == index && (<Text style={answers[0][2] == answers[0][1] ? [styles.answer,{color:btnColors.success}] : [styles.answer,{color:btnColors.danger}]}>{answer}</Text>) ||
+                                        (<Text style={styles.answer}>{answer}</Text>)}
+                                    </TouchableOpacity>)
+                                })}
+                            </View>
+                            <View style={[styles.options,{marginLeft:20}]}>
+                                <Text style={styles.title}>Right Table</Text>
+                                {answers[1][0].map((answer, index) => {
+                                    return (<TouchableOpacity onPress={() => updateAnswer(1, index)} style={styles.answerRow} key={'q1_'+index}>
+                                        {answers[1][2] == index && (<View>
+                                            {answers[1][2] == answers[1][1] && (<View>
+                                                <Icon
+                                                    name='checkmark'
+                                                    type='ionicon'
+                                                    size={16}
+                                                    color={btnColors.success}
+                                                />
+                                            </View>) || (<View>
+                                                <Icon
+                                                    name='close'
+                                                    type='ionicon'
+                                                    size={16}
+                                                    color={btnColors.danger}
+                                                />
+                                            </View>)}
+                                        </View>) || (<View>
+                                                <Icon
+                                                    name='ellipse-outline'
+                                                    type='ionicon'
+                                                    size={16}
+                                                    color={colors.mainTextColor}
+                                                />
+                                            </View>)}
+                                        {answers[1][2] == index && (<Text style={answers[1][2] == answers[1][1] ? [styles.answer,{color:btnColors.success}] : [styles.answer,{color:btnColors.danger}]}>{answer}</Text>) ||
+                                        (<Text style={styles.answer}>{answer}</Text>)}
+                                    </TouchableOpacity>)
+                                })}
+                            </View>
+                        </View>
+                        <View style={styles.sectionContent}>
+                            <Text style={[styles.paragraph]}>You may notice that its significantly easier to identify the person. Which table hasn't applied pseudonymization correctly?</Text>
+                        </View>
+                        <View style={[styles.options,{marginTop:20,flexDirection:'column'}]}>
+                            {answers[2][0].map((answer, index) => {
+                                return (<TouchableOpacity onPress={() => updateAnswer(2, index)} style={styles.answerRow} key={'q1_'+index}>
+                                    {answers[2][2] == index && (<View>
+                                        {answers[2][2] == answers[2][1] && (<View>
+                                            <Icon
+                                                name='checkmark'
+                                                type='ionicon'
+                                                size={16}
+                                                color={btnColors.success}
+                                            />
+                                        </View>) || (<View>
+                                            <Icon
+                                                name='close'
+                                                type='ionicon'
+                                                size={16}
+                                                color={btnColors.danger}
+                                            />
+                                        </View>)}
+                                    </View>) || (<View>
+                                            <Icon
+                                                name='ellipse-outline'
+                                                type='ionicon'
+                                                size={16}
+                                                color={colors.mainTextColor}
+                                            />
+                                        </View>)}
+                                    {answers[2][2] == index && (<Text style={answers[2][2] == answers[2][1] ? [styles.answer,{color:btnColors.success}] : [styles.answer,{color:btnColors.danger}]}>{answer}</Text>) ||
+                                    (<Text style={styles.answer}>{answer}</Text>)}
+                                </TouchableOpacity>)
+                            })}
+                        </View>
+                    </View>
+                </View>
                 <View style={styles.sectionContent}>
                     <Text style={[styles.largeTitle]}>Final Thoughts</Text>
                     <View style={styles.sectionContent}>

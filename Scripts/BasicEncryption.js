@@ -165,7 +165,7 @@ export default function WebTracking(props) {
                 <View style={styles.sectionContent}>
                     <Text style={[styles.paragraph]}>What happens if you use a letter like A that doesn't have any characters "before it" in the alphabet?</Text>  
                 </View> 
-                <View style={styles.encryptionActivity}>
+                <View style={styles.activity}>
                     <View style={styles.encryptionSettings}>
                         <View style={{flex:1}}>
                             <Text style={styles.inputText}>
