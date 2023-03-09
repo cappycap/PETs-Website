@@ -5,7 +5,7 @@
     "slug": "pets.adambullard.com",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/main.png",
+    "icon": "./assets/icons/main.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -27,7 +27,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/main.png"
+      "favicon": "./assets/icons/main.png"
     }
   }
 }
