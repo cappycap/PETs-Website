@@ -136,7 +136,7 @@ export default function WebTracking(props) {
         </View>) ||
         (<View style={{flex:1}}>
         {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
-            <Header mobile={mobile} page={0} />
+            <Header mobile={mobile} page={1} />
             {section == 0 && (<View style={styles.section}>
                 <View style={styles.sectionContent}>
                     <Text style={styles.largeTitle}>How Tracking Happens</Text>
@@ -200,7 +200,7 @@ export default function WebTracking(props) {
                 </View>
                 {!infoLoading && (<View style={styles.webTrackingInteractiveContainer}>
                     {userData == null && (<Button 
-                        buttonStyle={[styles.navButton,{width:width/2}]}
+                        buttonStyle={[styles.navButton,{width:width/3,padding:20}]}
                         title={'Find Data'}
                         onPress={() => getUserData()}
                     />) || (<View style={styles.activity}>

@@ -47,24 +47,24 @@ export const main = StyleSheet.create({
   row: {
     flexDirection:'row',
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'flex-start'
   },
   largeTitle: {
     fontFamily:'PoppinsSemiBold',
     fontSize:32,
-    textAlign:'center',
+    textAlign:'left',
     color:colors.mainTextColor
   },
   title: {
     fontFamily:'PoppinsSemiBold',
     fontSize:22,
-    textAlign:'center',
+    textAlign:'left',
     color:colors.mainTextColor
   },
   paragraph: {
     fontFamily:'Poppins',
     fontSize:18,
-    textAlign:'center',
+    textAlign:'left',
     color:colors.mainTextColor,
     flexWrap:'wrap'
   },
@@ -92,7 +92,6 @@ export const main = StyleSheet.create({
     justifyContent:'space-between'
   },
   webTrackingInteractiveContainer: {
-    alignItems:'center',
     marginTop:20,
     marginBottom:20
   },
@@ -105,8 +104,6 @@ export const main = StyleSheet.create({
     marginTop:20,
   },
   contentImageContainer: {
-    justifyContent:'center',
-    alignItems:'center',
     margin:20
   },
   activity: {
@@ -182,10 +179,12 @@ export const header = StyleSheet.create({
     paddingRight:20,
     paddingTop:15,
     paddingBottom:15,
-    backgroundColor:colors.mainHighlight,
+    backgroundColor:colors.secondaryBackground,
     flexDirection: 'row',
     alignItems:'center',
     justifyContent: 'space-between',
+    borderBottomWidth:5,
+    borderBottomColor:colors.mainHighlight
   },
   headerLeft: {
     flex:1,

@@ -29,7 +29,11 @@ export default function Header(props) {
             <View style={styles.headerLeftMobile}>
                 <Animated.Image 
                     source={require('../../assets/icons/main.png')}
-                    style={[styles.logo]}
+                    style={[{
+                        width:140,
+                        height:70,
+                        left:-20
+                    }]}
                 /> 
             </View>
             <Icon
@@ -48,14 +52,14 @@ export default function Header(props) {
                 <Text style={[styles.headerBoxTextMobile]}>Home</Text>
             </TouchableOpacity>)}
             {enableMintAndQuests && (<View>
-                {props.page == 2 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
+                {props.page == 1 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
                     <Text style={[styles.headerBoxTextMobileFocused]}>Web Tracking</Text>
                     <View style={styles.headerListItemDot}></View>
                 </TouchableOpacity>) || (<TouchableOpacity style={styles.headerBoxMobile} onPress={() => linkTo('/web-tracking')}>
                     <Text style={[styles.headerBoxTextMobile]}>Web Tracking</Text>
                 </TouchableOpacity>)}
             </View>)}
-            {props.page == 1 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
+            {props.page == 2 && (<TouchableOpacity style={styles.headerBoxMobile} disabled={true}>
                 <Text style={[styles.headerBoxTextMobileFocused]}>Basic Encryption</Text>
                 <View style={styles.headerListItemDot}></View>
             </TouchableOpacity>) || (<TouchableOpacity style={styles.headerBoxMobile} onPress={() => linkTo('/basic-encryption')}>

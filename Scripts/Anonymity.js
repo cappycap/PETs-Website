@@ -54,7 +54,7 @@ export default function WebTracking(props) {
         }
     }, [width])
 
-    const [section, setSection] = useState(2)
+    const [section, setSection] = useState(0)
 
     const [answers, setAnswers] = useState([
         [
@@ -88,7 +88,7 @@ export default function WebTracking(props) {
         </View>) ||
         (<View style={{flex:1}}>
         {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
-            <Header mobile={mobile} page={0} />
+            <Header mobile={mobile} page={3} />
             {section == 0 && (<View style={styles.section}>
                 <View style={styles.sectionContent}>
                     <Text style={styles.largeTitle}>Basic Mixnets</Text>
@@ -311,7 +311,7 @@ export default function WebTracking(props) {
                 <View style={styles.sectionContent}>
                     <Text style={[styles.largeTitle]}>Interactive Activity: Identification</Text>
                     <View style={styles.sectionContent}>
-                        <Text style={[styles.paragraph]}>In this activity, you will take on the role of an attacker trying to identify a person in a database.</Text>
+                        <Text style={[styles.paragraph,]}>In this activity, you will take on the role of an attacker trying to identify a person in a database.</Text>
                     </View>
                     <View style={styles.sectionContent}>
                         <Text style={[styles.paragraph]}>Here is that person:</Text>
@@ -347,9 +347,9 @@ export default function WebTracking(props) {
                     </View>
                     <View style={styles.activity}>
                         <View style={[styles.sectionContent,{marginTop:0}]}>
-                            <Text style={[styles.paragraph]}>Try and guess which row represents the person in each table:</Text>
+                            <Text style={[styles.paragraph,{textAlign:'center'}]}>Try and guess which row represents the person in each table:</Text>
                         </View>
-                        <View style={styles.row}>
+                        <View style={[styles.row,{justifyContent:'center',alignItems:'center'}]}>
                         <View style={[styles.options,{marginRight:20}]}>
                                 <Text style={styles.title}>Left Table</Text>
                                 {answers[0][0].map((answer, index) => {
@@ -383,7 +383,7 @@ export default function WebTracking(props) {
                                     </TouchableOpacity>)
                                 })}
                             </View>
-                            <View style={[styles.options,{marginLeft:20}]}>
+                            <View style={[styles.options,{marginLeft:20,justifyContent:'center',alignItems:'center'}]}>
                                 <Text style={styles.title}>Right Table</Text>
                                 {answers[1][0].map((answer, index) => {
                                     return (<TouchableOpacity onPress={() => updateAnswer(1, index)} style={styles.answerRow} key={'q1_'+index}>
@@ -418,7 +418,7 @@ export default function WebTracking(props) {
                             </View>
                         </View>
                         <View style={styles.sectionContent}>
-                            <Text style={[styles.paragraph]}>You may notice that its significantly easier to identify the person. Which table hasn't applied pseudonymization correctly?</Text>
+                            <Text style={[styles.paragraph,{textAlign:'center'}]}>You may notice that its significantly easier to identify the person. Which table hasn't applied pseudonymization correctly?</Text>
                         </View>
                         <View style={[styles.options,{marginTop:20,flexDirection:'column'}]}>
                             {answers[2][0].map((answer, index) => {

@@ -125,7 +125,7 @@ export default function WebTracking(props) {
         </View>) ||
         (<View style={{flex:1}}>
         {siteEnabled && (<Animated.View style={[styles.mainContainer,{opacity:fadeAnim}]}>
-            <Header mobile={mobile} page={0} />
+            <Header mobile={mobile} page={2} />
             {section == 0 && (<View style={styles.section}>
                 <View style={styles.sectionContent}>
                     <Text style={styles.largeTitle}>Basic Encryption</Text>

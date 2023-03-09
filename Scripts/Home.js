@@ -49,6 +49,18 @@ export default function Home(props) {
         if (width < 950) {
             console.log('width change')
             setMobile(true)
+            styles.paragraph = {
+                fontFamily:'Poppins',
+                fontSize:18,
+                textAlign:'center',
+                color:colors.mainTextColor,
+                flexWrap:'wrap'
+            }
+            styles.row = {
+                flexDirection:'column',
+                justifyContent:'center',
+                alignItems:'center'
+            }
         } else {
             setMobile(false)
         }
@@ -77,7 +89,7 @@ export default function Home(props) {
                         onPress={() => linkTo('/web-tracking')}
                     />
                 </View>
-                <View style={[styles.infoBox,{marginLeft:20,marginRight:20}]}>
+                <View style={mobile ? [styles.infoBox,{marginTop:20,marginBottom:20}] : [styles.infoBox,{marginLeft:20,marginRight:20}]}>
                     <Text style={styles.title}>Encryption Basics</Text>
                     <Text style={styles.paragraph}>Learn the essentials to how data is kept secret.</Text>
                     <Button 
