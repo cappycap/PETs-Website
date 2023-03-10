@@ -141,7 +141,7 @@ export default function WebTracking(props) {
                 <View style={styles.sectionContent}>
                     <Text style={styles.largeTitle}>How Tracking Happens</Text>
                 </View>
-                <View style={[styles.sectionContent,{margin:20}]}>
+                <View style={[styles.sectionContent,{marginTop:20}]}>
                     <Text style={styles.paragraph}>When viewing a website, you allow that website to learn information about you and your computer.</Text>
                 </View>
                 <View style={styles.sectionContent}>
@@ -149,7 +149,10 @@ export default function WebTracking(props) {
                 </View>
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking1.jpeg')}
-                                    style={{
+                                    style={mobile ? {
+                                        width:width-80,
+                                        height:(width-80)*(209/650)
+                                    } : {
                                         width:width/2,
                                         height:(width/2)*(209/650)
                                     }}
@@ -169,7 +172,10 @@ export default function WebTracking(props) {
 
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking2.png')}
-                                    style={{
+                                    style={mobile ? {
+                                        width:width-80,
+                                        height:(width-80)*(856/1200)
+                                    } : {
                                         width:width/2,
                                         height:(width/2)*(856/1200)
                                     }}
@@ -311,7 +317,10 @@ export default function WebTracking(props) {
                 </View>
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking3.jpeg')}
-                        style={{
+                        style={mobile ? {
+                            width:width-80,
+                            height:(width-80)*(446/800)
+                        } : {
                             width:width/2,
                             height:(width/2)*(446/800)
                         }}
@@ -334,7 +343,10 @@ export default function WebTracking(props) {
                 </View>
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/webtracking4.png')}
-                        style={{
+                        style={mobile ? {
+                            width:width-80,
+                            height:(width-80)*(696/1200)
+                        } : {
                             width:width/2,
                             height:(width/2)*(696/1200)
                         }}

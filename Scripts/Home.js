@@ -61,6 +61,18 @@ export default function Home(props) {
                 justifyContent:'center',
                 alignItems:'center'
             }
+            styles.title = {
+                fontFamily:'PoppinsSemiBold',
+                fontSize:22,
+                textAlign:'center',
+                color:colors.mainTextColor
+            }
+            styles.largeTitle = {
+                fontFamily:'PoppinsSemiBold',
+                fontSize:32,
+                textAlign:'center',
+                color:colors.mainTextColor
+            }
         } else {
             setMobile(false)
         }

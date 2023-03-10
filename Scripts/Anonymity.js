@@ -100,7 +100,10 @@ export default function WebTracking(props) {
                     <Text style={[styles.paragraph]}>Mixnets are applications that can obscure the directions that an input takes to get to its output.</Text>
                     <View style={styles.contentImageContainer}>
                         <Animated.Image source={require('../assets/infopng/mixnet.png')}
-                            style={{
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(210/870)
+                            } : {
                                 width:width/2,
                                 height:(width/2)*(210/870)
                             }}
@@ -115,7 +118,10 @@ export default function WebTracking(props) {
                     <View style={[styles.row]}>
                          <View style={styles.contentImageContainer}>
                             <Animated.Image source={require('../assets/infopng/mixnetsenders.png')}
-                                style={{
+                                style={mobile ? {
+                                    width:width/3,
+                                    height:(width/3)*(247/225)
+                                } : {
                                     width:width/6,
                                     height:(width/6)*(247/225)
                                 }}
@@ -123,7 +129,10 @@ export default function WebTracking(props) {
                         </View>
                         <View style={styles.contentImageContainer}>
                             <Animated.Image source={require('../assets/infopng/mixnetreceivers.png')}
-                                style={{
+                                style={mobile ? {
+                                    width:width/3,
+                                    height:(width/3)*(247/225)
+                                } : {
                                     width:width/6,
                                     height:(width/6)*(247/225)
                                 }}
@@ -135,7 +144,10 @@ export default function WebTracking(props) {
                     </View>
                     <View style={styles.contentImageContainer}>
                         <Animated.Image source={require('../assets/infopng/senderencrypt.png')}
-                            style={{
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(35/169)
+                            } : {
                                 width:width/4,
                                 height:(width/4)*(35/169)
                             }}
@@ -146,7 +158,10 @@ export default function WebTracking(props) {
                     </View>
                     <View style={styles.contentImageContainer}>
                         <Animated.Image source={require('../assets/infopng/mixerencrypt.png')}
-                            style={{
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(38/222)
+                            } : {
                                 width:width/4,
                                 height:(width/4)*(38/222)
                             }}
@@ -158,7 +173,10 @@ export default function WebTracking(props) {
                     <View style={styles.contentImageContainer}>
                         <Animated.Image 
                             source={require('../assets/infopng/mixerdecrypt.png')}
-                            style={{
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(330/749)
+                            } : {
                                 width:width/4,
                                 height:(width/4)*(330/749)
                             }}
@@ -169,7 +187,10 @@ export default function WebTracking(props) {
                     </View>
                     <View style={styles.contentImageContainer}>
                         <Animated.Image source={require('../assets/infopng/receiverdecrypt.png')}
-                            style={{
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(49/68)
+                            } : {
                                 width:width/4,
                                 height:(width/4)*(49/68)
                             }}
@@ -221,7 +242,10 @@ export default function WebTracking(props) {
                     </View>
                     <View style={styles.contentImageContainer}>
                         <Animated.Image source={require('../assets/infopng/encdectime.png')}
-                            style={{
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(150/579)
+                            } : {
                                 width:width/3,
                                 height:(width/3)*(150/579)
                             }}
@@ -253,7 +277,10 @@ export default function WebTracking(props) {
                 </View>
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/deanonymizedtable.png')}
-                        style={{
+                        style={mobile ? {
+                            width:width-80,
+                            height:(width-80)*(291/682)
+                        } : {
                             width:width/3,
                             height:(width/3)*(291/682)
                         }}
@@ -270,7 +297,10 @@ export default function WebTracking(props) {
                 </View>
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/uniquetable.png')}
-                        style={{
+                        style={mobile ? {
+                            width:width-80,
+                            height:(width-80)*(291/682)
+                        } : {
                             width:width/3,
                             height:(width/3)*(291/682)
                         }}
@@ -288,15 +318,21 @@ export default function WebTracking(props) {
                 <View style={[styles.row, {marginTop:30}]}>
                     <View style={[styles.infoBox, {borderColor: 'transparent'}]}>
                         <Animated.Image source={require('../assets/infopng/kdata.png')}
-                             style={{
-                                 width:width/12,
-                                 height:(width/12)*(270/112)
-                             }}
+                             style={mobile ? {
+                                width:width/3,
+                                height:(width/3)*(270/112)
+                            } : {
+                                width:width/12,
+                                height:(width/12)*(270/112)
+                            }}
                         />
                     </View>
                     <View style={[styles.infoBox, {borderColor: 'transparent'}]}>
                         <Animated.Image source={require('../assets/infopng/kdataanon.png')}
-                            style={{
+                            style={mobile ? {
+                                width:width/3,
+                                height:(width/3)*(270/112)
+                            } : {
                                 width:width/12,
                                 height:(width/12)*(270/112)
                             }}

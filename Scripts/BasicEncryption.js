@@ -147,10 +147,13 @@ export default function WebTracking(props) {
                 </View>        
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/caesar.png')}
-                            style={{
-                            width:width/4,
-                            height:(width/4)*(186/440)
-                        }}
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(186/440)
+                            } : {
+                                width:width/4,
+                                height:(width/4)*(186/440)
+                            }}
                     />
                 </View>
                 <View style={styles.sectionContent}>
@@ -234,10 +237,13 @@ export default function WebTracking(props) {
                 </View>
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/symmetric.png')}
-                            style={{
-                            width:width/2,
-                            height:(width/2)*(353/924)
-                        }}
+                            style={mobile ? {
+                                width:width-80,
+                                height:(width-80)*(353/924)
+                            } : {
+                                width:width/2,
+                                height:(width/2)*(353/924)
+                            }}
                     />
                 </View>
                 <View style={styles.sectionContent}>
@@ -251,10 +257,13 @@ export default function WebTracking(props) {
                 </View>
                 <View style={styles.contentImageContainer}>
                     <Animated.Image source={require('../assets/infopng/asymmetric.png')}
-                                style={{
-                                width:width/2,
-                                height:(width/2)*(353/924)
-                            }}
+                                style={mobile ? {
+                                    width:width-80,
+                                    height:(width-80)*(353/924)
+                                } : {
+                                    width:width/2,
+                                    height:(width/2)*(353/924)
+                                }}
                     />
                 </View>
                 <View style={styles.sectionContent}>
